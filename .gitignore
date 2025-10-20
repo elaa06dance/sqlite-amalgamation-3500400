@@ -1,0 +1,6 @@
+build
+.sconsign.dblite
+
+*.exe
+*.obj
+*.tds
