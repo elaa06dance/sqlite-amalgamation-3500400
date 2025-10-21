@@ -3,8 +3,8 @@ import os
 env = Environment(
     ENV={'PATH' : os.environ['PATH'], 'HOME' : os.environ['HOME']},
     BUILDERS={
-        'BCC': Builder(action='bcc32c -I include -o $TARGET -c $SOURCE'),
-        'ILINK': Builder(action='ilink32 -Gn -x -L.\\lib;..\\..\\BCC102\\lib\\win32c\\release;..\\..\\BCC102\\lib\\win32c\\release\\psdk $SOURCES c0x32.obj,$TARGET,,import32 cw32'),
+        'BCC': Builder(action='bcc32c -DSQLITE_THREADSAFE=0 -I include -o $TARGET -c $SOURCE'),
+        'ILINK': Builder(action='ilink32 -Gn -x -L.\\lib;..\\..\\BCC102\\lib\\win32c\\release;..\\..\\BCC102\\lib\\win32c\\release\\psdk $SOURCES c0x32.obj,$TARGET,,import32 cw32mt'),
     },
 )
 
